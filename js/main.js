@@ -84,11 +84,9 @@ $(function () {
         var hourDeg = hour/12*360 + minuteDeg/60*6
 
         var secondString = secondHand.style.transform
-        console.log(secondString)
         var index = secondString.indexOf('(')
         var index2 = secondString.lastIndexOf('deg)')
         var numberString = secondString.substring(index+1, index2)
-        console.log(numberString);
 
         secondHand.style.transform = `rotate(${parseInt(numberString)+6}deg)`
         document.querySelector('.minuteHand').style.transform= `rotate(${-90+minuteDeg}deg)`
