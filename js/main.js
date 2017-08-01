@@ -107,7 +107,6 @@ $(function () {
     function flashSecond(Deg) {
         var  fixDeg= `rotate(${Deg+90}deg)`
         for(let i = 0; i<60; i++){
-            console.log($units[i].style.transform)
             if(fixDeg === $units[i].style.transform){
                     $units[i].style.borderLeftColor = 'red'
             }
