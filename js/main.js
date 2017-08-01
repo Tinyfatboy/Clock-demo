@@ -17,7 +17,6 @@ $(function () {
             width: '400px',
             height: '400px'
         })
-
         $units.css({
             width: '360px',
             height: '3px',
@@ -39,7 +38,6 @@ $(function () {
             width: '80vw',
             height: '80vw'
         })
-
         $units.css({
             width: '72vw',
             height: '0.6vw',
@@ -58,7 +56,7 @@ $(function () {
     }
 
     for(let i = 0; i<=59; i++){
-        $units[i].style.transform = `rotate(${i*6-90}deg`
+        $units[i].style.transform = `rotate(${i*6+90}deg`
     }
 
     var secondHand = document.querySelector('.secondHand');
@@ -74,7 +72,7 @@ $(function () {
         document.querySelector('.minuteHand').style.transform= `rotate(${-90+minuteDeg}deg)`
         document.querySelector('.hourHand').style.transform= `rotate(${-90+hourDeg}deg)`
 
-        flashSecond()
+        flashSecond(secondDeg)
     }
     
     function step() {
@@ -92,7 +90,7 @@ $(function () {
         document.querySelector('.minuteHand').style.transform= `rotate(${-90+minuteDeg}deg)`
         document.querySelector('.hourHand').style.transform= `rotate(${-90+hourDeg}deg)`
 
-        flashSecond()
+        flashSecond(secondDeg)
     }
 
     function getDate() {
@@ -106,21 +104,15 @@ $(function () {
         }
     }
 
-    function flashSecond() {
+    function flashSecond(Deg) {
+        var  fixDeg= `rotate(${Deg+90}deg)`
         for(let i = 0; i<60; i++){
-            if(secondHand.style.transform === $units[i].style.transform){
-                if(i<=29){
-                    $units[i+30].style.borderLeftColor = 'red'
-                }else{
-                    $units[i-30].style.borderLeftColor = 'red'
-                }
+            console.log($units[i].style.transform)
+            if(fixDeg === $units[i].style.transform){
+                    $units[i].style.borderLeftColor = 'red'
             }
             else{
-                if(i<=29){
-                    $units[i+30].style.borderLeftColor = 'white'
-                }else{
-                    $units[i-30].style.borderLeftColor = 'white'
-                }
+                    $units[i].style.borderLeftColor = 'white'
             }
         }
     }
