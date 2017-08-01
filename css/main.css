@@ -88,7 +88,7 @@ div.clock > .center {
     div.clock > .secondHand{
         width: 34vw;
         margin-top: -0.3vw;
-        margin-left: -6vw;
+        margin-left: -4vw;
     }
     div.clock > .minuteHand{
         height: 0.6vw;
