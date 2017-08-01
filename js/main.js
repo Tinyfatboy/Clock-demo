@@ -9,36 +9,60 @@ $(function () {
         $unit.appendTo($clockUnit)
     }
 
-    $clockUnit.css({
-        position: 'absolute',
-        width: '400px',
-        height: '400px'
-    })
-
+    var width = window.screen.width
     var $units = $('.unit')
-    $units.css({
-        width: '360px',
-        height: '3px',
-        borderTop: '0px solid transparent',
-        borderRight: '3px solid transparent',
-        borderBottom: '0px solid transparent',
-        borderLeft: '15px solid #fff',
-        backgroundColor: 'transparent',
-        position: 'absolute',
-        top: '50%',
-        marginTop: '-1.5px',
-        marginLeft: '5px',
-        transformOrigin: '195px 50%',
-        transition: 'all .5s'
-    })
+    if(width > 415){
+        $clockUnit.css({
+            position: 'absolute',
+            width: '400px',
+            height: '400px'
+        })
+
+        $units.css({
+            width: '360px',
+            height: '3px',
+            borderTop: '0px solid transparent',
+            borderRight: '3px solid transparent',
+            borderBottom: '0px solid transparent',
+            borderLeft: '15px solid #fff',
+            backgroundColor: 'transparent',
+            position: 'absolute',
+            top: '50%',
+            marginTop: '-1.5px',
+            marginLeft: '5px',
+            transformOrigin: '195px 50%',
+            transition: 'all .5s'
+        })
+    }else {
+        $clockUnit.css({
+            position: 'absolute',
+            width: '80vw',
+            height: '80vw'
+        })
+
+        $units.css({
+            width: '72vw',
+            height: '0.6vw',
+            borderTop: '0 solid transparent',
+            borderRight: '0.6vw solid transparent',
+            borderBottom: '0px solid transparent',
+            borderLeft: '3vw solid #fff',
+            backgroundColor: 'transparent',
+            position: 'absolute',
+            top: '50%',
+            marginTop: '-0.3vw',
+            marginLeft: '1vw',
+            transformOrigin: '39vw 50%',
+            transition: 'all .5s'
+        })
+    }
 
     for(let i = 0; i<=59; i++){
         $units[i].style.transform = `rotate(${i*6-90}deg`
     }
 
     var secondHand = document.querySelector('.secondHand');
-    var second, minute, hour
-    var time
+    var second, minute, hour, time
 
     function setTime(){
         getDate()
