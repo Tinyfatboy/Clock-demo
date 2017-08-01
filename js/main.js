@@ -36,29 +36,58 @@ $(function () {
         $units[i].style.transform = `rotate(${i*6-90}deg`
     }
 
+    var secondHand = document.querySelector('.secondHand');
+    var second, minute, hour
+    var time
 
-    function step(){
-        var time = new Date()
+    function setTime(){
+        getDate()
+        var secondDeg = second/60*360
+        var minuteDeg = minute/60*360 + secondDeg/360*6
+        var hourDeg = hour/12*360 + minuteDeg/60*6
+        console.log(secondDeg);
+        console.log(minuteDeg);
+        console.log(hourDeg);
 
-        var hour = time.getHours()
-        var minute = time.getMinutes()
-        var second = time.getSeconds()
+        secondHand.style.transform = `rotate(${-90+secondDeg}deg)`
+        document.querySelector('.minuteHand').style.transform= `rotate(${-90+minuteDeg}deg)`
+        document.querySelector('.hourHand').style.transform= `rotate(${-90+hourDeg}deg)`
 
-        if(hour > 12){
-            hour = hour - 12
-        }
-
+        flashSecond()
+    }
+    
+    function step() {
+        getDate()
         var secondDeg = second/60*360
         var minuteDeg = minute/60*360 + secondDeg/360*6
         var hourDeg = hour/12*360 + minuteDeg/60*6
 
-        var secondHand = document.querySelector('.secondHand');
+        var secondString = secondHand.style.transform
+        console.log(secondString)
+        var index = secondString.indexOf('(')
+        var index2 = secondString.lastIndexOf('deg)')
+        var numberString = secondString.substring(index+1, index2)
+        console.log(numberString);
 
-        document.querySelector('.secondHand').style.transform = `rotate(${-90+secondDeg}deg)`
+        secondHand.style.transform = `rotate(${parseInt(numberString)+6}deg)`
         document.querySelector('.minuteHand').style.transform= `rotate(${-90+minuteDeg}deg)`
         document.querySelector('.hourHand').style.transform= `rotate(${-90+hourDeg}deg)`
 
+        flashSecond()
+    }
 
+    function getDate() {
+        time = new Date()
+
+        hour = time.getHours()
+        minute = time.getMinutes()
+        second = time.getSeconds()
+        if(hour > 12){
+            hour = hour - 12
+        }
+    }
+
+    function flashSecond() {
         for(let i = 0; i<60; i++){
             if(secondHand.style.transform === $units[i].style.transform){
                 if(i<=29){
@@ -77,6 +106,7 @@ $(function () {
         }
     }
 
+    setTime()
     setInterval(function(){
         step()
     },1000)
