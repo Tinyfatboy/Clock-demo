@@ -1,0 +1,72 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #E8F1F6, #141333);
+}
+
+div.clockWrapper{
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E5EEF5;
+    box-shadow: 2px 6px 15px rgba(202,214,232,0.8);
+    position: relative;
+}
+
+div.clock{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin:50px;
+    border-radius: 50%;
+    background-color: #EBF4F9;
+    box-shadow: 2px 6px 20px 10px rgba(202,214,232,0.8);
+}
+
+div.clock > div {
+    position: absolute;
+    left: 50%;
+    background-color: red;
+    top: 50%;
+    height: 3px;
+    width: 140px;
+    transform-origin: 20px 50%;
+    transition: all .5s;
+}
+
+div.clock > .secondHand{
+    width: 170px;
+    margin-top: -1.5px;
+    margin-left: -20px;
+    z-index: 3;
+}
+div.clock > .minuteHand{
+    height: 3px;
+    margin-top: -1.5px;
+    background-color: #CBD6E7;
+    margin-left: -20px;
+    z-index: 2;
+}
+div.clock > .hourHand{
+    width: 10px;
+    height: 3px;
+    border-top: 1px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-left: 100px solid #170A32;
+    margin-top: -2.5px;
+    margin-left: -20px;
+    background-color: transparent;
+}
+div.clock > .center {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: -6px;
+    margin-top: -6px;
+    z-index: 3;
+}
