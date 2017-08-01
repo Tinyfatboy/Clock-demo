@@ -93,7 +93,7 @@ div.clock > .center {
     div.clock > .minuteHand{
         height: 0.6vw;
         margin-top:  -0.3vw;
-        margin-left:  -6vw;
+        margin-left:  -4vw;
     }
     div.clock > .hourHand{
         width: 2vw;
