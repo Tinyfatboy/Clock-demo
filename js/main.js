@@ -45,9 +45,6 @@ $(function () {
         var secondDeg = second/60*360
         var minuteDeg = minute/60*360 + secondDeg/360*6
         var hourDeg = hour/12*360 + minuteDeg/60*6
-        console.log(secondDeg);
-        console.log(minuteDeg);
-        console.log(hourDeg);
 
         secondHand.style.transform = `rotate(${-90+secondDeg}deg)`
         document.querySelector('.minuteHand').style.transform= `rotate(${-90+minuteDeg}deg)`
