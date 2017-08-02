@@ -1,7 +1,8 @@
 body{
     height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     background: radial-gradient(circle, #E8F1F6, #141333);
 }
@@ -71,6 +72,21 @@ div.clock > .center {
     margin-left: -6px;
     margin-top: -6px;
     z-index: 3;
+}
+
+div.time-display {
+    font-size: 45px;
+    color: white;
+    font-family: "Microsoft YaHei UI";
+    margin-top: -30px;
+    position: relative;
+    border: 1px solid red;
+}
+
+div.time-display > span {
+    font-size: 20px;
+    position: absolute;
+    border: 1px solid green;
 }
 
 @media (max-width: 415px) {

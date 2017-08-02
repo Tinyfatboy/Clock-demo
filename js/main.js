@@ -60,7 +60,7 @@ $(function () {
     }
 
     var secondHand = document.querySelector('.secondHand');
-    var second, minute, hour, time
+    var second, minute, hour, time, status
 
     function setTime(){
         getDate()
@@ -73,6 +73,7 @@ $(function () {
         document.querySelector('.hourHand').style.transform= `rotate(${-90+hourDeg}deg)`
 
         flashSecond(secondDeg)
+        displayTime()
     }
     
     function step() {
@@ -91,16 +92,19 @@ $(function () {
         document.querySelector('.hourHand').style.transform= `rotate(${-90+hourDeg}deg)`
 
         flashSecond(secondDeg)
+        displayTime()
     }
 
     function getDate() {
         time = new Date()
+        status = 'AM'
 
         hour = time.getHours()
         minute = time.getMinutes()
         second = time.getSeconds()
         if(hour > 12){
             hour = hour - 12
+            status = 'PM'
         }
     }
 
@@ -114,6 +118,28 @@ $(function () {
                     $units[i].style.borderLeftColor = 'white'
             }
         }
+    }
+
+    function checkTime(time) {
+        if(time < 10){
+            time = '0' + time
+        }else {
+            time = time.toString()
+        }
+        return time
+    }
+
+    function displayTime() {
+        var fixSecond = checkTime(second)
+        var fixMinute = checkTime(minute)
+        var fixHour = checkTime(hour)
+
+        var $display = $('.time-display')
+        $display.text(`${fixHour}:${fixMinute}:${fixSecond}`)
+
+        var $status = $('<span></span>')
+        $status.text(status)
+        $status.appendTo($display)
     }
 
     setTime()
