@@ -75,18 +75,20 @@ div.clock > .center {
 }
 
 div.time-display {
+    margin-top: -30px;
     font-size: 45px;
     color: white;
-    font-family: "Microsoft YaHei UI";
-    margin-top: -30px;
+    font-family: "Microsoft Sans Serif";
+    line-height: 45px;
     position: relative;
-    border: 1px solid red;
 }
 
 div.time-display > span {
     font-size: 20px;
+    line-height: 20px;
     position: absolute;
-    border: 1px solid green;
+    top: 0;
+    right:-35px;
 }
 
 @media (max-width: 415px) {
@@ -127,5 +129,20 @@ div.time-display > span {
         margin-left: -1.2vw;
         margin-top: -1.2vw;
         z-index: 3;
+    }
+    div.time-display {
+        margin-top: -20vw;
+        font-size: 9vw;
+        color: white;
+        font-family: "Microsoft Sans Serif";
+        line-height: 9vw;
+        position: relative;
+    }
+    div.time-display > span {
+        font-size: 4vw;
+        line-height: 4vw;
+        position: absolute;
+        top: 0;
+        right:-7vw;
     }
 }

@@ -137,7 +137,7 @@ $(function () {
         var $display = $('.time-display')
         $display.text(`${fixHour}:${fixMinute}:${fixSecond}`)
 
-        var $status = $('<span></span>')
+        var $status = $('<span></span>').addClass('status')
         $status.text(status)
         $status.appendTo($display)
     }
