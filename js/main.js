@@ -14,7 +14,6 @@ $(function () {
     resizeUnits()
 
     window.onresize = function () {
-        console.log('改变大小')
         resizeUnits()
     }
 
