@@ -163,6 +163,10 @@ div.time-display > span {
     body{
         height: auto;
     }
+    div.clockWrapper{
+        margin-top: 7.5px;
+        margin-bottom: 7.5px;
+    }
     div.time-display{
         display: none;
     }
