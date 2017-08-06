@@ -9,6 +9,8 @@ body{
 
 div.clockWrapper{
     border-radius: 50%;
+    width: 400px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,6 +94,10 @@ div.time-display > span {
 }
 
 @media (max-width: 415px) {
+    div.clockWrapper{
+        width: 80vw;
+        height: 80vw;
+    }
     div.clock{
         width: 60vw;
         height: 60vw;
@@ -148,8 +154,11 @@ div.time-display > span {
 }
 @media (max-height: 415px) {
     body{
-        flex-direction: row;
-        justify-content: center;
+        position: relative;
+    }
+    div.clockWrapper{
+        position: absolute;
+        margin: auto;
     }
     div.time-display{
         display: none;
