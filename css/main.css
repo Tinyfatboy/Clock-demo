@@ -146,8 +146,10 @@ div.time-display > span {
         right:-7vw;
     }
 }
-
 @media (max-height: 415px) {
+    body{
+        justify-content: center;
+    }
     div.time-display{
         display: none;
     }
