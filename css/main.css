@@ -152,16 +152,19 @@ div.time-display > span {
         right:-7vw;
     }
 }
-@media (max-height: 415px) {
-    body{
-        position: relative;
+
+@media (max-height:  480px) {
+    div.time-display{
+        display: none;
     }
-    div.clockWrapper{
-        position: absolute;
-        left: 0;
-        top: 0;
+}
+
+@media (max-height: 400px) {
+    body{
+        height: auto;
     }
     div.time-display{
         display: none;
     }
 }
+
