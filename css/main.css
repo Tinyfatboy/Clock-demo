@@ -158,7 +158,6 @@ div.time-display > span {
     }
     div.clockWrapper{
         position: absolute;
-        margin: auto;
     }
     div.time-display{
         display: none;
