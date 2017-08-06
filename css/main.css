@@ -153,8 +153,13 @@ div.time-display > span {
     }
 }
 @media (max-height: 415px) {
+    body{
+        position: relative;
+    }
     div.clockWrapper{
         position: absolute;
+        left: 0;
+        top: 0;
     }
     div.time-display{
         display: none;
