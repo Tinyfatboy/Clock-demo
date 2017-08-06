@@ -148,6 +148,7 @@ div.time-display > span {
 }
 @media (max-height: 415px) {
     body{
+        flex-direction: row;
         justify-content: center;
     }
     div.time-display{
