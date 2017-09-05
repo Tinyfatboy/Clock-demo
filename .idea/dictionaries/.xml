@@ -2,6 +2,7 @@
   <dictionary name="小胖子">
     <words>
       <w>modernizr</w>
+      <w>onresize</w>
     </words>
   </dictionary>
 </component>

@@ -2,7 +2,7 @@
 
 ### 预览页面
 
-- 预览页面[clock原子钟页面](https://tinyfatboy.github.io/Clock-demo/index.html)
+- 预览页面：[clock原子钟页面](https://tinyfatboy.github.io/Clock-demo/index.html)
 
 ### 说明
 
