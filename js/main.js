@@ -1,72 +1,72 @@
 $(function () {
-    var $clockUnit = $('<div></div>')
-    $clockUnit.addClass('clockUnit')
-    $clockUnit.insertBefore('.clock')
+    // var $clockUnit = $('<div></div>')
+    // $clockUnit.addClass('clockUnit')
+    // $clockUnit.insertBefore('.clock')
 
-    for (let i = 0; i <= 59; i++) {
-        let $unit = $('<div></div>')
-        $unit.addClass('unit')
-        $unit.appendTo($clockUnit)
-    }
+    // for (let i = 0; i <= 59; i++) {
+    //     let $unit = $('<div></div>')
+    //     $unit.addClass('unit')
+    //     $unit.appendTo($clockUnit)
+    // }
 
-    var width =  window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-    var $units = $('.unit')
-    resizeUnits()
+    // var width =  window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+    // var $units = $('.unit')
+    // resizeUnits()
 
-    window.onresize = function () {
-        resizeUnits()
-    }
+    // window.onresize = function () {
+    //     resizeUnits()
+    // }
 
-    function resizeUnits() {
-        width =  window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-        if (width > 415) {
-            $clockUnit.css({
-                position: 'absolute',
-                width: '400px',
-                height: '400px'
-            })
-            $units.css({
-                width: '360px',
-                height: '3px',
-                borderTop: '0px solid transparent',
-                borderRight: '3px solid transparent',
-                borderBottom: '0px solid transparent',
-                borderLeft: '15px solid #fff',
-                backgroundColor: 'transparent',
-                position: 'absolute',
-                top: '50%',
-                marginTop: '-1.5px',
-                marginLeft: '5px',
-                transformOrigin: '195px 50%',
-                transition: 'all .5s'
-            })
-        } else {
-            $clockUnit.css({
-                position: 'absolute',
-                width: '80vw',
-                height: '80vw'
-            })
-            $units.css({
-                width: '72vw',
-                height: '0.6vw',
-                borderTop: '0 solid transparent',
-                borderRight: '0.6vw solid transparent',
-                borderBottom: '0px solid transparent',
-                borderLeft: '3vw solid #fff',
-                backgroundColor: 'transparent',
-                position: 'absolute',
-                top: '50%',
-                marginTop: '-0.3vw',
-                marginLeft: '1vw',
-                transformOrigin: '39vw 50%',
-                transition: 'all .5s'
-            })
-        }
-    }
+    // function resizeUnits() {
+    //     width =  window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+    //     if (width > 415) {
+    //         $clockUnit.css({
+    //             position: 'absolute',
+    //             width: '400px',
+    //             height: '400px'
+    //         })
+    //         $units.css({
+    //             width: '360px',
+    //             height: '3px',
+    //             borderTop: '0px solid transparent',
+    //             borderRight: '3px solid transparent',
+    //             borderBottom: '0px solid transparent',
+    //             borderLeft: '15px solid #fff',
+    //             backgroundColor: 'transparent',
+    //             position: 'absolute',
+    //             top: '50%',
+    //             marginTop: '-1.5px',
+    //             marginLeft: '5px',
+    //             transformOrigin: '195px 50%',
+    //             transition: 'all .5s'
+    //         })
+    //     } else {
+    //         $clockUnit.css({
+    //             position: 'absolute',
+    //             width: '80vw',
+    //             height: '80vw'
+    //         })
+    //         $units.css({
+    //             width: '72vw',
+    //             height: '0.6vw',
+    //             borderTop: '0 solid transparent',
+    //             borderRight: '0.6vw solid transparent',
+    //             borderBottom: '0px solid transparent',
+    //             borderLeft: '3vw solid #fff',
+    //             backgroundColor: 'transparent',
+    //             position: 'absolute',
+    //             top: '50%',
+    //             marginTop: '-0.3vw',
+    //             marginLeft: '1vw',
+    //             transformOrigin: '39vw 50%',
+    //             transition: 'all .5s'
+    //         })
+    //     }
+    // }
 
-    for (let i = 0; i <= 59; i++) {
-        $units[i].style.transform = `rotate(${i * 6 + 90}deg`
-    }
+    // for (let i = 0; i <= 59; i++) {
+    //     $units[i].style.transform = `rotate(${i * 6 + 90}deg`
+    // }
 
     var second, minute, hour, time, status
 
@@ -86,7 +86,7 @@ $(function () {
             $('.secondHand').css('transition', 'all .5s')
         }
 
-        flashSecond(secondDeg)
+        // flashSecond(secondDeg)
         displayTime()
     }
 
@@ -103,17 +103,17 @@ $(function () {
         }
     }
 
-    function flashSecond(Deg) {
-        var fixDeg = `rotate(${Deg + 90}deg)`
-        for (let i = 0; i < 60; i++) {
-            if (fixDeg === $units[i].style.transform) {
-                $units[i].style.borderLeftColor = 'red'
-            }
-            else {
-                $units[i].style.borderLeftColor = 'white'
-            }
-        }
-    }
+    // function flashSecond(Deg) {
+    //     var fixDeg = `rotate(${Deg + 90}deg)`
+    //     for (let i = 0; i < 60; i++) {
+    //         if (fixDeg === $units[i].style.transform) {
+    //             $units[i].style.borderLeftColor = 'red'
+    //         }
+    //         else {
+    //             $units[i].style.borderLeftColor = 'white'
+    //         }
+    //     }
+    // }
 
     function checkTime(time) {
         if (time < 10) {
