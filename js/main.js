@@ -87,7 +87,7 @@ $(function () {
         }
 
         // flashSecond(secondDeg)
-        displayTime()
+        // displayTime()
     }
 
     function getDate() {
@@ -124,18 +124,18 @@ $(function () {
         return time
     }
 
-    function displayTime() {
-        var fixSecond = checkTime(second)
-        var fixMinute = checkTime(minute)
-        var fixHour = checkTime(hour)
+    // function displayTime() {
+    //     var fixSecond = checkTime(second)
+    //     var fixMinute = checkTime(minute)
+    //     var fixHour = checkTime(hour)
 
-        var $display = $('.time-display')
-        $display.text(`${fixHour}:${fixMinute}:${fixSecond}`)
+    //     var $display = $('.time-display')
+    //     $display.text(`${fixHour}:${fixMinute}:${fixSecond}`)
 
-        var $status = $('<span></span>').addClass('status')
-        $status.text(status)
-        $status.appendTo($display)
-    }
+    //     var $status = $('<span></span>').addClass('status')
+    //     $status.text(status)
+    //     $status.appendTo($display)
+    // }
 
     setTime()
     setInterval(function () {
