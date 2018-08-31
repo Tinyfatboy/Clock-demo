@@ -76,9 +76,13 @@ $(function () {
         var minuteDeg = minute / 60 * 360 + secondDeg / 360 * 6
         var hourDeg = hour / 12 * 360 + minuteDeg / 60 * 6
 
-        $('.secondHand')[0].style.transform = `rotate(${-90 + secondDeg}deg)`
-        $('.minuteHand')[0].style.transform = `rotate(${-90 + minuteDeg}deg)`
-        $('.hourHand')[0].style.transform = `rotate(${-90 + hourDeg}deg)`
+        var secDeg = secondDeg - 90
+        var minDeg = minuteDeg - 90
+        var houDeg = hourDeg - 90
+
+        $('.secondHand')[0].style.transform = 'rotate(' + secDeg +'deg)'
+        $('.minuteHand')[0].style.transform = 'rotate(' + minDeg +'deg)'
+        $('.hourHand')[0].style.transform = 'rotate(' + houDeg +'deg)'
 
         if (secondDeg === 0) {
             $('.secondHand').css('transition', 'all 0s')
